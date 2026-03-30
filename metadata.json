@@ -1,0 +1,7 @@
+{
+  "name": "CampusEats",
+  "description": "A campus-focused food delivery app for UNILAG students, featuring restaurant browsing, real-time tracking, and rider coordination.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
