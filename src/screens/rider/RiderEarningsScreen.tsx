@@ -21,7 +21,7 @@ export const RiderEarningsScreen: React.FC<RiderEarningsScreenProps> = ({ naviga
   return (
     <div className="min-h-screen bg-gray-50 pb-32">
       <header className="bg-[#001f3f] p-6 pt-12 flex items-center justify-between sticky top-0 z-20 shadow-sm">
-        <button onClick={() => navigateTo('home')} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+        <button aria-label="Go back" onClick={() => navigateTo('home')} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
           <ArrowLeft className="w-5 h-5 text-white" />
         </button>
         <h2 className="text-xl font-black text-white">My Earnings</h2>
@@ -88,11 +88,11 @@ export const RiderEarningsScreen: React.FC<RiderEarningsScreenProps> = ({ naviga
       </div>
 
       <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-8 py-4 flex justify-between items-center z-30">
-        <button onClick={() => navigateTo('home')} className="flex flex-col items-center gap-1 text-gray-400">
+        <button onClick={() => navigateTo('rider_request')} className="flex flex-col items-center gap-1 text-gray-400">
           <LayoutGrid className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase tracking-widest">Explore</span>
         </button>
-        <button onClick={() => navigateTo('history')} className="flex flex-col items-center gap-1 text-gray-400">
+        <button onClick={() => navigateTo('rider_request')} className="flex flex-col items-center gap-1 text-gray-400">
           <History className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase tracking-widest">Orders</span>
         </button>

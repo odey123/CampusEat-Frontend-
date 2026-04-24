@@ -78,7 +78,7 @@ export const RiderRequestScreen: React.FC<RiderRequestScreenProps> = ({ navigate
 
       <div className="grid grid-cols-2 gap-4 w-full">
         <Button variant="ghost" onClick={() => navigateTo('home')} className="h-16">Decline</Button>
-        <Button variant="success" onClick={() => navigateTo('home')} className="h-16">
+        <Button variant="success" onClick={() => navigateTo('rider_active_delivery')} className="h-16">
           Accept <CheckCircle2 className="w-5 h-5" />
         </Button>
       </div>

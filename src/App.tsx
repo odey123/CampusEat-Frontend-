@@ -16,6 +16,7 @@ import { ProfileScreen } from './screens/customer/ProfileScreen';
 
 import { RiderRequestScreen } from './screens/rider/RiderRequestScreen';
 import { RiderEarningsScreen } from './screens/rider/RiderEarningsScreen';
+import { RiderActiveDeliveryScreen } from './screens/rider/RiderActiveDeliveryScreen';
 
 import { RestaurantAlertScreen } from './screens/vendor/RestaurantAlertScreen';
 import { VendorSignUpScreen } from './screens/vendor/VendorSignUpScreen';
@@ -143,6 +144,11 @@ const App = () => {
         {currentScreen === 'rider_earnings' && (
           <motion.div key="rider_earnings" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <RiderEarningsScreen navigateTo={navigateTo} isRiderMode={isRiderMode} setIsRiderMode={setIsRiderMode} />
+          </motion.div>
+        )}
+        {currentScreen === 'rider_active_delivery' && (
+          <motion.div key="rider_active_delivery" initial={{ x: 300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -300, opacity: 0 }}>
+            <RiderActiveDeliveryScreen navigateTo={navigateTo} />
           </motion.div>
         )}
         {currentScreen === 'restaurant_alert' && (
