@@ -16,7 +16,10 @@ export type Screen =
   | 'vendor_signup'
   | 'vendor_dashboard'
   | 'vendor_menu'
-  | 'vendor_add_item';
+  | 'vendor_add_item'
+  | 'vendor_application_submitted'
+  | 'vendor_active_orders'
+  | 'vendor_earnings';
 
 export interface MenuItem {
   id: string;

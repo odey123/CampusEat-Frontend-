@@ -43,7 +43,7 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({ na
               />
             </div>
           </div>
-          <button className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md">
+          <button type="button" aria-label="Settings" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md">
             <Settings className="w-5 h-5 text-white" />
           </button>
         </div>
@@ -108,25 +108,25 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({ na
         <div className="flex flex-col gap-4">
           <h3 className="text-xl font-black text-[#001f3f]">Quick Actions</h3>
           <div className="grid grid-cols-2 gap-4">
-            <button onClick={() => navigateTo('vendor_menu')} className="bg-white p-5 rounded-[24px] shadow-sm border border-gray-50 flex flex-col items-center justify-center gap-3 active:scale-95 transition-all">
+            <button type="button" onClick={() => navigateTo('vendor_menu')} className="bg-white p-5 rounded-[24px] shadow-sm border border-gray-50 flex flex-col items-center justify-center gap-3 active:scale-95 transition-all">
               <div className="w-12 h-12 bg-[#001f3f]/5 rounded-xl flex items-center justify-center">
                 <Grid className="w-6 h-6 text-[#001f3f]" />
               </div>
               <span className="font-bold text-[#001f3f] text-sm">Manage Menu</span>
             </button>
-            <button className="bg-white p-5 rounded-[24px] shadow-sm border border-gray-50 flex flex-col items-center justify-center gap-3 active:scale-95 transition-all">
+            <button type="button" onClick={() => navigateTo('vendor_earnings')} className="bg-white p-5 rounded-[24px] shadow-sm border border-gray-50 flex flex-col items-center justify-center gap-3 active:scale-95 transition-all">
               <div className="w-12 h-12 bg-[#001f3f]/5 rounded-xl flex items-center justify-center">
                 <Wallet className="w-6 h-6 text-[#001f3f]" />
               </div>
               <span className="font-bold text-[#001f3f] text-sm">View Earnings</span>
             </button>
-            <button className="bg-white p-5 rounded-[24px] shadow-sm border border-gray-50 flex flex-col items-center justify-center gap-3 active:scale-95 transition-all">
+            <button type="button" className="bg-white p-5 rounded-[24px] shadow-sm border border-gray-50 flex flex-col items-center justify-center gap-3 active:scale-95 transition-all">
               <div className="w-12 h-12 bg-[#001f3f]/5 rounded-xl flex items-center justify-center">
                 <History className="w-6 h-6 text-[#001f3f]" />
               </div>
               <span className="font-bold text-[#001f3f] text-sm">Order History</span>
             </button>
-            <button className="bg-white p-5 rounded-[24px] shadow-sm border border-gray-50 flex flex-col items-center justify-center gap-3 active:scale-95 transition-all">
+            <button type="button" className="bg-white p-5 rounded-[24px] shadow-sm border border-gray-50 flex flex-col items-center justify-center gap-3 active:scale-95 transition-all">
               <div className="w-12 h-12 bg-[#001f3f]/5 rounded-xl flex items-center justify-center">
                 <Settings className="w-6 h-6 text-[#001f3f]" />
               </div>
@@ -138,20 +138,20 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({ na
 
       {/* Bottom Navigation Navbar */}
       <nav className="fixed bottom-0 left-0 right-0 bg-[#001f3f] px-8 py-5 flex justify-between items-center z-30">
-        <button onClick={() => navigateTo('home')} className="flex flex-col items-center gap-1 text-white relative">
+        <button type="button" onClick={() => navigateTo('home')} className="flex flex-col items-center gap-1 text-white relative">
           <Home className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
           <div className="absolute -bottom-3 w-4 h-1 bg-[#C1121F] rounded-full" />
         </button>
-        <button className="flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors">
+        <button type="button" onClick={() => navigateTo('vendor_active_orders')} className="flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors">
           <Receipt className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase tracking-widest mt-1">Orders</span>
         </button>
-        <button className="flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors">
+        <button type="button" className="flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors">
           <Grid className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase tracking-widest mt-1">Menu</span>
         </button>
-        <button className="flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors">
+        <button type="button" className="flex flex-col items-center gap-1 text-white/50 hover:text-white transition-colors">
           <Settings className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase tracking-widest mt-1">Settings</span>
         </button>

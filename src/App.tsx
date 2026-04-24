@@ -23,6 +23,9 @@ import { VendorSignUpScreen } from './screens/vendor/VendorSignUpScreen';
 import { VendorDashboardScreen } from './screens/vendor/VendorDashboardScreen';
 import { VendorMenuScreen } from './screens/vendor/VendorMenuScreen';
 import { VendorAddItemScreen } from './screens/vendor/VendorAddItemScreen';
+import { VendorApplicationSubmittedScreen } from './screens/vendor/VendorApplicationSubmittedScreen';
+import { VendorActiveOrdersScreen } from './screens/vendor/VendorActiveOrdersScreen';
+import { VendorEarningsScreen } from './screens/vendor/VendorEarningsScreen';
 
 const App = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
@@ -174,6 +177,21 @@ const App = () => {
         {currentScreen === 'vendor_add_item' && (
           <motion.div key="vendor_add_item" initial={{ x: 300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -300, opacity: 0 }}>
             <VendorAddItemScreen navigateTo={navigateTo} editingItem={editingMenuItem} />
+          </motion.div>
+        )}
+        {currentScreen === 'vendor_application_submitted' && (
+          <motion.div key="vendor_application_submitted" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <VendorApplicationSubmittedScreen navigateTo={navigateTo} />
+          </motion.div>
+        )}
+        {currentScreen === 'vendor_active_orders' && (
+          <motion.div key="vendor_active_orders" initial={{ x: 300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -300, opacity: 0 }}>
+            <VendorActiveOrdersScreen navigateTo={navigateTo} />
+          </motion.div>
+        )}
+        {currentScreen === 'vendor_earnings' && (
+          <motion.div key="vendor_earnings" initial={{ x: 300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -300, opacity: 0 }}>
+            <VendorEarningsScreen navigateTo={navigateTo} />
           </motion.div>
         )}
           </AnimatePresence>
