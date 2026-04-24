@@ -34,8 +34,11 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ navigateTo }) => (
       <Button onClick={() => navigateTo('home')} variant="outline" className="w-full border-white/20 text-white hover:bg-white/10">
         I already have an account
       </Button>
-      <div className="text-center mt-8">
+      <div className="text-center mt-8 flex flex-col gap-4">
         <span className="text-white/40 text-xs uppercase tracking-widest font-bold">— University Edition —</span>
+        <button onClick={() => navigateTo('vendor_signup')} className="text-[#C1121F] text-sm font-bold hover:text-white transition-colors">
+          Own a restaurant? Partner with us
+        </button>
       </div>
     </div>
   </div>

@@ -166,22 +166,6 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       </button>
     </nav>
 
-    {/* Floating Action Buttons for Demo */}
-    <div className="fixed bottom-24 right-6 flex flex-col gap-3 z-40">
-      <button 
-        onClick={() => navigateTo('restaurant_alert')}
-        className="w-12 h-12 bg-red-500 text-white rounded-full shadow-lg flex items-center justify-center"
-        title="Demo: New Order Alert"
-      >
-        <Bell className="w-6 h-6" />
-      </button>
-      <button 
-        onClick={() => navigateTo('rider_request')}
-        className="w-12 h-12 bg-green-500 text-white rounded-full shadow-lg flex items-center justify-center"
-        title="Demo: New Delivery Request"
-      >
-        <Bike className="w-6 h-6" />
-      </button>
-    </div>
+    {/* Floating Action Buttons Removed as per request */}
   </div>
 );

@@ -11,7 +11,11 @@ export type Screen =
   | 'history'
   | 'rating'
   | 'rider_earnings'
-  | 'profile';
+  | 'profile'
+  | 'vendor_signup'
+  | 'vendor_dashboard'
+  | 'vendor_menu'
+  | 'vendor_add_item';
 
 export interface MenuItem {
   id: string;

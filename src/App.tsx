@@ -18,10 +18,15 @@ import { RiderRequestScreen } from './screens/rider/RiderRequestScreen';
 import { RiderEarningsScreen } from './screens/rider/RiderEarningsScreen';
 
 import { RestaurantAlertScreen } from './screens/vendor/RestaurantAlertScreen';
+import { VendorSignUpScreen } from './screens/vendor/VendorSignUpScreen';
+import { VendorDashboardScreen } from './screens/vendor/VendorDashboardScreen';
+import { VendorMenuScreen } from './screens/vendor/VendorMenuScreen';
+import { VendorAddItemScreen } from './screens/vendor/VendorAddItemScreen';
 
 const App = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
+  const [editingMenuItem, setEditingMenuItem] = useState<any>(null);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isRiderMode, setIsRiderMode] = useState(false);
 
@@ -57,9 +62,10 @@ const App = () => {
 
   return (
     <div className="min-h-screen md:bg-gray-200 flex flex-col items-center justify-center font-sans text-gray-800 md:py-8">
-      <div className="w-full bg-gray-50 min-h-screen md:min-h-0 md:h-[844px] md:w-[390px] md:rounded-[40px] md:shadow-[0_0_40px_rgba(0,0,0,0.1)] md:overflow-y-auto md:overflow-x-hidden md:[transform:translateZ(0)] relative no-scrollbar">
-      <AnimatePresence mode="wait">
-        {currentScreen === 'welcome' && (
+      <div className="w-full bg-white min-h-screen md:min-h-0 md:h-[844px] md:w-[390px] md:rounded-[40px] md:shadow-[0_0_40px_rgba(0,0,0,0.1)] md:overflow-hidden md:[transform:translateZ(0)] relative flex flex-col">
+        <div className="w-full flex-1 md:overflow-y-auto md:overflow-x-hidden no-scrollbar bg-gray-50 relative">
+          <AnimatePresence mode="wait">
+            {currentScreen === 'welcome' && (
           <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <WelcomeScreen navigateTo={navigateTo} />
           </motion.div>
@@ -144,7 +150,28 @@ const App = () => {
             <RestaurantAlertScreen navigateTo={navigateTo} />
           </motion.div>
         )}
-      </AnimatePresence>
+        {currentScreen === 'vendor_signup' && (
+          <motion.div key="vendor_signup" initial={{ x: 300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -300, opacity: 0 }}>
+            <VendorSignUpScreen navigateTo={navigateTo} />
+          </motion.div>
+        )}
+        {currentScreen === 'vendor_dashboard' && (
+          <motion.div key="vendor_dashboard" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <VendorDashboardScreen navigateTo={navigateTo} />
+          </motion.div>
+        )}
+        {currentScreen === 'vendor_menu' && (
+          <motion.div key="vendor_menu" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <VendorMenuScreen navigateTo={navigateTo} setEditingMenuItem={setEditingMenuItem} />
+          </motion.div>
+        )}
+        {currentScreen === 'vendor_add_item' && (
+          <motion.div key="vendor_add_item" initial={{ x: 300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -300, opacity: 0 }}>
+            <VendorAddItemScreen navigateTo={navigateTo} editingItem={editingMenuItem} />
+          </motion.div>
+        )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );
