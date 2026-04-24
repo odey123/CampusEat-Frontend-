@@ -27,6 +27,11 @@ import { VendorApplicationSubmittedScreen } from './screens/vendor/VendorApplica
 import { VendorActiveOrdersScreen } from './screens/vendor/VendorActiveOrdersScreen';
 import { VendorEarningsScreen } from './screens/vendor/VendorEarningsScreen';
 
+import { AdminDashboardScreen } from './screens/admin/AdminDashboardScreen';
+import { AdminVendorsScreen } from './screens/admin/AdminVendorsScreen';
+import { AdminRidersScreen } from './screens/admin/AdminRidersScreen';
+import { AdminFinanceScreen } from './screens/admin/AdminFinanceScreen';
+
 const App = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
@@ -192,6 +197,26 @@ const App = () => {
         {currentScreen === 'vendor_earnings' && (
           <motion.div key="vendor_earnings" initial={{ x: 300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -300, opacity: 0 }}>
             <VendorEarningsScreen navigateTo={navigateTo} />
+          </motion.div>
+        )}
+        {currentScreen === 'admin_dashboard' && (
+          <motion.div key="admin_dashboard" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <AdminDashboardScreen navigateTo={navigateTo} />
+          </motion.div>
+        )}
+        {currentScreen === 'admin_vendors' && (
+          <motion.div key="admin_vendors" initial={{ x: 300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -300, opacity: 0 }}>
+            <AdminVendorsScreen navigateTo={navigateTo} />
+          </motion.div>
+        )}
+        {currentScreen === 'admin_riders' && (
+          <motion.div key="admin_riders" initial={{ x: 300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -300, opacity: 0 }}>
+            <AdminRidersScreen navigateTo={navigateTo} />
+          </motion.div>
+        )}
+        {currentScreen === 'admin_finance' && (
+          <motion.div key="admin_finance" initial={{ x: 300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -300, opacity: 0 }}>
+            <AdminFinanceScreen navigateTo={navigateTo} />
           </motion.div>
         )}
           </AnimatePresence>

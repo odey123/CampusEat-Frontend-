@@ -19,7 +19,11 @@ export type Screen =
   | 'vendor_add_item'
   | 'vendor_application_submitted'
   | 'vendor_active_orders'
-  | 'vendor_earnings';
+  | 'vendor_earnings'
+  | 'admin_dashboard'
+  | 'admin_vendors'
+  | 'admin_riders'
+  | 'admin_finance';
 
 export interface MenuItem {
   id: string;

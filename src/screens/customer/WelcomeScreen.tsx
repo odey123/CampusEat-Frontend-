@@ -88,6 +88,13 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ navigateTo }) => (
       >
         Own a restaurant? Partner with us
       </button>
+      <button
+        type="button"
+        onClick={() => navigateTo('admin_dashboard')}
+        className="text-white/20 text-[10px] hover:text-white/40 transition-colors"
+      >
+        Admin Access
+      </button>
     </motion.div>
   </div>
 );
