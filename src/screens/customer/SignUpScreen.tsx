@@ -12,7 +12,7 @@ export const SignUpScreen: React.FC<SignUpScreenProps> = ({ navigateTo }) => (
   <div className="min-h-screen bg-white flex flex-col">
     <div className="bg-[#001f3f] p-8 pt-16 rounded-b-[40px] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-xl" />
-      <button onClick={() => navigateTo('welcome')} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mb-8">
+      <button type="button" aria-label="Go back" onClick={() => navigateTo('welcome')} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mb-8">
         <ArrowLeft className="w-5 h-5 text-white" />
       </button>
       <h2 className="text-3xl font-bold text-white mb-2">Create your account</h2>
@@ -40,7 +40,7 @@ export const SignUpScreen: React.FC<SignUpScreenProps> = ({ navigateTo }) => (
           By signing up you agree to our <span className="text-[#C1121F] font-bold">terms and conditions</span> and <span className="text-[#C1121F] font-bold">privacy policy</span>.
         </p>
         <p className="text-center mt-8 text-gray-600">
-          Already have an account? <button onClick={() => navigateTo('home')} className="text-[#001f3f] font-bold">Login</button>
+          Already have an account? <button type="button" onClick={() => navigateTo('home')} className="text-[#001f3f] font-bold">Login</button>
         </p>
       </div>
     </div>

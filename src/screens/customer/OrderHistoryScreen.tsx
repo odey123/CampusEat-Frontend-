@@ -29,7 +29,7 @@ export const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ navigate
   return (
     <div className="min-h-screen bg-gray-50 pb-32">
       <header className="bg-[#001f3f] p-6 pt-12 flex items-center justify-between sticky top-0 z-20 shadow-sm">
-        <button onClick={() => navigateTo('home')} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+        <button type="button" aria-label="Go back" onClick={() => navigateTo('home')} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
           <ArrowLeft className="w-5 h-5 text-white" />
         </button>
         <h2 className="text-xl font-black text-white">My Orders</h2>
@@ -39,7 +39,8 @@ export const OrderHistoryScreen: React.FC<OrderHistoryScreenProps> = ({ navigate
       <div className="bg-white border-b border-gray-100 sticky top-[88px] z-10">
         <div className="flex px-6">
           {['All', 'Active', 'Completed'].map(tab => (
-            <button 
+            <button
+              type="button"
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`flex-1 py-4 font-bold text-sm transition-all border-b-2 ${activeTab === tab ? 'border-[#C1121F] text-[#C1121F]' : 'border-transparent text-gray-400'}`}

@@ -24,8 +24,9 @@ export const Button = ({
   };
 
   return (
-    <button 
-      onClick={onClick} 
+    <button
+      type="button"
+      onClick={onClick}
       className={`${baseStyles} ${variants[variant]} ${className}`}
       disabled={disabled}
     >

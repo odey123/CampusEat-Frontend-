@@ -20,11 +20,11 @@ export const TrackingScreen: React.FC<TrackingScreenProps> = ({ navigateTo }) =>
   return (
     <div className="min-h-screen bg-gray-50 pb-32">
     <header className="bg-white p-6 pt-12 flex items-center justify-between sticky top-0 z-20 shadow-sm">
-      <button onClick={() => navigateTo('home')} className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+      <button type="button" aria-label="Go back" onClick={() => navigateTo('home')} className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
         <ArrowLeft className="w-5 h-5 text-[#001f3f]" />
       </button>
       <h2 className="text-xl font-black text-[#001f3f]">Order Tracking</h2>
-      <button className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+      <button type="button" aria-label="Order help" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
         <AlertCircle className="w-5 h-5 text-[#001f3f]" />
       </button>
     </header>
@@ -94,7 +94,7 @@ export const TrackingScreen: React.FC<TrackingScreenProps> = ({ navigateTo }) =>
 
       <div className="mt-16 bg-white p-6 rounded-[40px] shadow-lg border border-gray-50">
         <div className="flex items-center gap-4 mb-6">
-          <img src="https://picsum.photos/seed/tunde/100/100" className="w-16 h-16 rounded-2xl object-cover" referrerPolicy="no-referrer" />
+          <img src="https://picsum.photos/seed/tunde/100/100" alt="Rider Tunde" className="w-16 h-16 rounded-2xl object-cover" referrerPolicy="no-referrer" />
           <div className="flex-1">
             <div className="flex items-center justify-between">
               <h4 className="font-black text-[#001f3f] text-lg">Tunde</h4>
@@ -121,21 +121,21 @@ export const TrackingScreen: React.FC<TrackingScreenProps> = ({ navigateTo }) =>
     </div>
 
     <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-8 py-4 flex justify-between items-center z-30">
-      <button onClick={() => navigateTo('home')} className="flex flex-col items-center gap-1 text-gray-400">
+      <button type="button" onClick={() => navigateTo('home')} className="flex flex-col items-center gap-1 text-gray-400">
         <LayoutGrid className="w-6 h-6" />
         <span className="text-[10px] font-bold uppercase tracking-widest">Explore</span>
       </button>
-      <button className="flex flex-col items-center gap-1 text-gray-400">
+      <button type="button" className="flex flex-col items-center gap-1 text-gray-400">
         <Search className="w-6 h-6" />
         <span className="text-[10px] font-bold uppercase tracking-widest">Search</span>
       </button>
-      <button onClick={() => navigateTo('history')} className="flex flex-col items-center gap-1 text-[#C1121F]">
+      <button type="button" onClick={() => navigateTo('history')} className="flex flex-col items-center gap-1 text-[#C1121F]">
         <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-[#C1121F]">
           <History className="w-6 h-6" />
         </div>
         <span className="text-[10px] font-black uppercase tracking-widest">Orders</span>
       </button>
-      <button onClick={() => navigateTo('profile')} className="flex flex-col items-center gap-1 text-gray-400">
+      <button type="button" onClick={() => navigateTo('profile')} className="flex flex-col items-center gap-1 text-gray-400">
         <User className="w-6 h-6" />
         <span className="text-[10px] font-bold uppercase tracking-widest">Profile</span>
       </button>

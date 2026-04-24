@@ -79,8 +79,9 @@ export const RestaurantAlertScreen: React.FC<RestaurantAlertScreenProps> = ({ na
       <p className="text-center text-xs font-black text-[#001f3f] uppercase tracking-widest mb-6">Estimated Prep Time</p>
       <div className="grid grid-cols-3 gap-3 mb-8">
         {['10 mins', '15 mins', '20 mins'].map((time, i) => (
-          <button 
-            key={time} 
+          <button
+            type="button"
+            key={time}
             className={`py-4 rounded-2xl font-bold text-sm transition-all ${i === 1 ? 'bg-[#C1121F] text-white shadow-lg' : 'bg-white text-gray-400 border border-gray-100'}`}
           >
             {time}

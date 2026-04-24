@@ -23,14 +23,14 @@ export const RestaurantDetailScreen: React.FC<RestaurantDetailScreenProps> = ({
   return (
     <div className="min-h-screen bg-gray-50 pb-32">
       <div className="relative h-80">
-        <img src={selectedRestaurant.image} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+        <img src={selectedRestaurant.image} alt={selectedRestaurant.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-white" />
         <div className="absolute top-12 left-6 right-6 flex justify-between items-center">
-          <button onClick={() => navigateTo('home')} className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
+          <button type="button" aria-label="Go back" onClick={() => navigateTo('home')} className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
             <ArrowLeft className="w-5 h-5 text-white" />
           </button>
           <h2 className="text-white font-black text-xl italic">{selectedRestaurant.name}</h2>
-          <button className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
+          <button type="button" aria-label="Add to favourites" className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
             <Heart className="w-5 h-5 text-white" />
           </button>
         </div>
@@ -60,7 +60,8 @@ export const RestaurantDetailScreen: React.FC<RestaurantDetailScreenProps> = ({
           {['All', 'Rice', 'Proteins', 'Swallow', 'Drinks'].map((cat, i) => (
             <button 
               key={cat} 
-              className={`px-8 py-3 rounded-2xl font-bold whitespace-nowrap transition-all ${i === 0 ? 'bg-[#001f3f] text-white' : 'bg-gray-200 text-gray-500'}`}
+              type="button"
+              className={`px-8 py-3 rounded-2xl font-bold whitespace-nowrap transition-all ${i === 0 ? 'bg-[#FF7A00] text-white' : 'bg-gray-200 text-gray-500'}`}
             >
               {cat}
             </button>
@@ -76,10 +77,12 @@ export const RestaurantDetailScreen: React.FC<RestaurantDetailScreenProps> = ({
           {selectedRestaurant.menu.map(item => (
             <div key={item.id} className="bg-white p-4 rounded-[32px] flex gap-4 shadow-sm border border-gray-50">
               <div className="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 relative">
-                <img src={item.image} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                <button 
+                <img src={item.image} alt={item.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <button
+                  type="button"
+                  aria-label={`Add ${item.name} to cart`}
                   onClick={() => addToCart(item)}
-                  className="absolute bottom-1 right-1 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg text-[#C1121F]"
+                  className="absolute bottom-1 right-1 w-8 h-8 bg-[#FF7A00] rounded-full flex items-center justify-center shadow-lg text-white"
                 >
                   <Plus className="w-5 h-5" />
                 </button>

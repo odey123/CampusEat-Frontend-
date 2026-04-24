@@ -48,8 +48,8 @@ export const VerificationScreen: React.FC<VerificationScreenProps> = ({ navigate
       <Button onClick={() => navigateTo('home')} className="w-full mb-8">Verify</Button>
 
       <div className="flex justify-between w-full text-sm">
-        <button className="text-gray-400 font-medium">Didn't receive an email?</button>
-        <button className="text-[#C1121F] font-bold">Resend in 45 seconds</button>
+        <button type="button" className="text-gray-400 font-medium">Didn't receive an email?</button>
+        <button type="button" className="text-[#C1121F] font-bold">Resend in 45 seconds</button>
       </div>
 
       <div className="flex gap-2 mt-12">

@@ -14,7 +14,7 @@ export const RatingScreen: React.FC<RatingScreenProps> = ({ navigateTo }) => {
   return (
     <div className="min-h-screen bg-gray-50 pb-32">
       <header className="bg-white p-6 pt-12 flex items-center justify-between sticky top-0 z-20 shadow-sm">
-        <button onClick={() => navigateTo('home')} className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+        <button type="button" aria-label="Go back" onClick={() => navigateTo('home')} className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
           <ArrowLeft className="w-5 h-5 text-[#001f3f]" />
         </button>
         <h2 className="text-xl font-black text-[#001f3f]">Rate Your Experience</h2>
@@ -32,7 +32,7 @@ export const RatingScreen: React.FC<RatingScreenProps> = ({ navigateTo }) => {
 
         <div className="bg-white rounded-[24px] p-6 shadow-sm border border-gray-50">
           <div className="flex items-center gap-4 mb-6">
-            <img src="https://picsum.photos/seed/tunde/100/100" className="w-12 h-12 rounded-full object-cover" referrerPolicy="no-referrer" />
+            <img src="https://picsum.photos/seed/tunde/100/100" alt="Rider Tunde" className="w-12 h-12 rounded-full object-cover" referrerPolicy="no-referrer" />
             <div>
               <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 block mb-1">Rate Your Rider</span>
               <h4 className="font-black text-[#001f3f] text-lg">Tunde</h4>
@@ -41,7 +41,7 @@ export const RatingScreen: React.FC<RatingScreenProps> = ({ navigateTo }) => {
           
           <div className="flex justify-between px-2 mb-6">
             {[1, 2, 3, 4, 5].map(star => (
-              <button key={star} onClick={() => setRiderRating(star)}>
+              <button type="button" key={star} aria-label={`Rate rider ${star} star${star > 1 ? 's' : ''}`} onClick={() => setRiderRating(star)}>
                 <Star className={`w-10 h-10 ${star <= riderRating ? 'fill-[#C1121F] text-[#C1121F]' : 'text-gray-200 fill-gray-200'} transition-all`} />
               </button>
             ))}
@@ -65,7 +65,7 @@ export const RatingScreen: React.FC<RatingScreenProps> = ({ navigateTo }) => {
           
           <div className="flex justify-between px-2 mb-6">
             {[1, 2, 3, 4, 5].map(star => (
-              <button key={star} onClick={() => setFoodRating(star)}>
+              <button type="button" key={star} aria-label={`Rate food ${star} star${star > 1 ? 's' : ''}`} onClick={() => setFoodRating(star)}>
                 <Star className={`w-10 h-10 ${star <= foodRating ? 'fill-[#C1121F] text-[#C1121F]' : 'text-gray-200 fill-gray-200'} transition-all`} />
               </button>
             ))}
@@ -80,7 +80,7 @@ export const RatingScreen: React.FC<RatingScreenProps> = ({ navigateTo }) => {
           <Button variant="primary" onClick={() => navigateTo('home')} className="w-full h-16 text-lg font-black italic">
             Submit Rating
           </Button>
-          <button onClick={() => navigateTo('home')} className="text-sm font-bold text-gray-400">
+          <button type="button" onClick={() => navigateTo('home')} className="text-sm font-bold text-gray-400">
             Skip for now
           </button>
         </div>

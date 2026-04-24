@@ -38,7 +38,7 @@ export const VendorAddItemScreen: React.FC<VendorAddItemScreenProps> = ({ naviga
     <div className="min-h-screen bg-gray-50 flex flex-col pb-12 relative overflow-y-auto no-scrollbar">
       {/* Header */}
       <div className="bg-[#001f3f] px-6 pt-12 pb-6 flex items-center justify-between sticky top-0 z-40 shadow-sm w-full">
-        <button onClick={() => navigateTo('vendor_menu')} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md">
+        <button type="button" aria-label="Go back" onClick={() => navigateTo('vendor_menu')} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md">
           <ArrowLeft className="w-5 h-5 text-white" />
         </button>
         <h2 className="text-xl font-black text-white">{isEditing ? 'Edit Menu Item' : 'Add Menu Item'}</h2>
@@ -50,7 +50,7 @@ export const VendorAddItemScreen: React.FC<VendorAddItemScreenProps> = ({ naviga
         <div className="w-full h-40 rounded-[24px] border-2 border-dashed border-gray-300 bg-white flex flex-col items-center justify-center gap-2 cursor-pointer relative overflow-hidden">
           {isEditing && editingItem?.image ? (
             <>
-              <img src={editingItem.image} className="absolute inset-0 w-full h-full object-cover opacity-50" referrerPolicy="no-referrer" />
+              <img src={editingItem.image} alt="Menu item preview" className="absolute inset-0 w-full h-full object-cover opacity-50" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-black/20" />
               <div className="relative z-10 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
                 <Camera className="w-5 h-5 text-[#001f3f]" />
@@ -77,9 +77,10 @@ export const VendorAddItemScreen: React.FC<VendorAddItemScreenProps> = ({ naviga
           />
 
           <div className="flex flex-col gap-2 w-full">
-            <label className="text-xs font-bold text-[#001f3f] uppercase tracking-wider">Category</label>
+            <label htmlFor="item-category" className="text-xs font-bold text-[#001f3f] uppercase tracking-wider">Category</label>
             <div className="relative">
-              <select 
+              <select
+                id="item-category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 className="w-full bg-gray-100 border-none rounded-2xl py-4 pl-6 pr-12 focus:ring-2 focus:ring-[#C1121F] outline-none text-gray-800 appearance-none font-medium"
@@ -121,9 +122,10 @@ export const VendorAddItemScreen: React.FC<VendorAddItemScreenProps> = ({ naviga
           </div>
 
           <div className="flex flex-col gap-2 w-full">
-            <label className="text-xs font-bold text-[#001f3f] uppercase tracking-wider">Preparation Time</label>
+            <label htmlFor="item-prep-time" className="text-xs font-bold text-[#001f3f] uppercase tracking-wider">Preparation Time</label>
             <div className="relative">
-              <select 
+              <select
+                id="item-prep-time"
                 value={prepTime}
                 onChange={(e) => setPrepTime(e.target.value)}
                 className="w-full bg-gray-100 border-none rounded-2xl py-4 pl-6 pr-12 focus:ring-2 focus:ring-[#C1121F] outline-none text-gray-800 appearance-none font-medium"

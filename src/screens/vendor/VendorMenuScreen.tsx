@@ -24,11 +24,13 @@ export const VendorMenuScreen: React.FC<VendorMenuScreenProps> = ({ navigateTo, 
     <div className="min-h-screen bg-gray-50 flex flex-col pb-32 relative">
       {/* Header */}
       <div className="bg-[#001f3f] px-6 pt-12 pb-6 flex items-center justify-between sticky top-0 z-40 shadow-md">
-        <button onClick={() => navigateTo('vendor_dashboard')} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md">
+        <button type="button" aria-label="Go back" onClick={() => navigateTo('vendor_dashboard')} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md">
           <ArrowLeft className="w-5 h-5 text-white" />
         </button>
         <h2 className="text-xl font-black text-white">My Menu</h2>
-        <button 
+        <button
+          type="button"
+          aria-label="Add menu item"
           onClick={() => { setEditingMenuItem(null); navigateTo('vendor_add_item'); }}
           className="w-10 h-10 bg-[#C1121F] rounded-full flex items-center justify-center shadow-lg shadow-red-900/20 active:scale-95 transition-all"
         >
@@ -49,7 +51,8 @@ export const VendorMenuScreen: React.FC<VendorMenuScreenProps> = ({ navigateTo, 
         </div>
         <div className="flex px-2 overflow-x-auto no-scrollbar">
           {['All', 'Rice', 'Proteins', 'Swallow', 'Drinks', 'Extras'].map(tab => (
-            <button 
+            <button
+              type="button"
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`flex-none px-6 py-4 font-bold text-sm transition-all border-b-2 ${activeTab === tab ? 'border-[#C1121F] text-[#C1121F]' : 'border-transparent text-gray-400 hover:text-gray-600'}`}
@@ -65,7 +68,7 @@ export const VendorMenuScreen: React.FC<VendorMenuScreenProps> = ({ navigateTo, 
         {menuItems.map(item => (
           <div key={item.id} className="bg-white p-4 rounded-[24px] shadow-sm border border-gray-50 flex items-center gap-4 relative">
             <div className="w-20 h-20 rounded-[16px] overflow-hidden flex-shrink-0 bg-gray-100">
-              <img src={item.image} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <img src={item.image} alt={item.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
             
             <div className="flex-1 min-w-0 pr-1 flex flex-col justify-center gap-1 mt-1">
@@ -80,7 +83,9 @@ export const VendorMenuScreen: React.FC<VendorMenuScreenProps> = ({ navigateTo, 
               </span>
             </div>
             
-            <button 
+            <button
+              type="button"
+              aria-label={`Options for ${item.name}`}
               onClick={(e) => { e.stopPropagation(); setOpenMenuId(openMenuId === item.id ? null : item.id); }}
               className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:bg-gray-50 flex-shrink-0 self-start -mt-2 -mr-2 relative z-10"
             >
@@ -95,13 +100,14 @@ export const VendorMenuScreen: React.FC<VendorMenuScreenProps> = ({ navigateTo, 
                   exit={{ opacity: 0, scale: 0.95 }}
                   className="absolute right-4 top-12 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 w-36 z-20 flex flex-col"
                 >
-                  <button 
+                  <button
+                    type="button"
                     onClick={() => { setEditingMenuItem(item); navigateTo('vendor_add_item'); }}
                     className="flex items-center gap-3 px-4 py-3 text-sm font-bold text-[#001f3f] hover:bg-gray-50 transition-colors w-full text-left"
                   >
                     <Edit2 className="w-4 h-4" /> Edit Item
                   </button>
-                  <button className="flex items-center gap-3 px-4 py-3 text-sm font-bold text-[#C1121F] hover:bg-red-50 transition-colors">
+                  <button type="button" className="flex items-center gap-3 px-4 py-3 text-sm font-bold text-[#C1121F] hover:bg-red-50 transition-colors">
                     <Trash2 className="w-4 h-4" /> Delete Item
                   </button>
                 </motion.div>
@@ -113,7 +119,8 @@ export const VendorMenuScreen: React.FC<VendorMenuScreenProps> = ({ navigateTo, 
 
       {/* Floating Action Button */}
       <div className="fixed bottom-8 right-6 z-40">
-        <button 
+        <button
+          type="button"
           onClick={() => { setEditingMenuItem(null); navigateTo('vendor_add_item'); }}
           className="bg-[#C1121F] text-white px-6 py-4 rounded-[24px] flex items-center gap-2 shadow-xl shadow-red-900/30 hover:bg-[#a00f19] active:scale-95 transition-all outline-none"
         >
